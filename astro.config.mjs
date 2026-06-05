@@ -9,7 +9,7 @@ export default defineConfig({
   site: "https://astro-sphere-demo.vercel.app",
   integrations: [
     mdx(),
-    sitemap(),
+    //sitemap(),
     solidJs(),
     tailwind({ applyBaseStyles: false }),
   ],
