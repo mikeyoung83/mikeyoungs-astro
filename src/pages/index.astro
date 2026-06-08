@@ -39,6 +39,10 @@ const stack = [
     href: "https://tailwindcss.com"
   },
 ]
+
+const startYear = 2007;
+const currentYear = new Date().getFullYear();
+const yearsOfExperience = currentYear - startYear;
 ---
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
@@ -80,20 +84,23 @@ const stack = [
       <div class='relative w-full h-full flex items-center justify-center'>
         <div class='p-5 text-center'>
           <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Hello, I am ...
+            Hello, my name is
           </p>
-          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-              Mike
+          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-8'>
+              Mike Young
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Currently designing products for humans.
+            I've been creating for the web for {yearsOfExperience} years.
+          </p>
+          <p class='animated text-sm md:text-base lg:text-lg opacity-75 mx-auto max-w-screen-sm p-5'>
+              Driven by the love of creating beautiful things and passionate about usability, I always strive to create websites that balance style and efficiency.
           </p>
           <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
-            <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
-              Read my blog
+            <a href='/projects' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
+              View my projects
             </a>
             <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
-              View my work
+              View my work history
             </a>
           </div>
         </div>
@@ -107,13 +114,34 @@ const stack = [
       <!-- About Section -->
       <section class="animate">
         <article>
-          <p>I am a <b><i>software engineer</i></b>, <b><i>ui/ux designer</i></b>, <b><i>product planner</i></b>, <b><i>mentor</i></b>, <b><i>student</i></b>, <b><i>minimalist</i></b>, <b><i>eternal optimist</i></b>, <b><i>crypto enthusiast</i></b> and <b><i>sarcasm connoisseur</i></b>.</p>
+          <p>I am a <b><i>front end web developer</i></b>, <b><i>ui/ux designer</i></b>, <b><i>geek</i></b>, <b><i>father</i></b>, and <b><i>retro gaming enthusiast</i></b>.</p>
           <p>I love to both build and break things. I am motivated by challenging projects with self-guided research and dynamic problem solving. My true passion is crafting creative front end designs with unique takes on color, typography and motion.</p>
-          <p>During my career</p>
-          <p>I have built products ranging from marketing and ecommerce websites to complex enterprise apps with focus on delivering fast, elegant code along with delightful user interfaces.</p>
-          <p>Now</p>
-          <p>I currently work as a software engineer at StreamlineFS, where I do product planning, design and development.</p>
+
+          <p>I currently work as a front end developer at ScalePad, where I do design and development in the SaaS space.</p>
         </article>
+      </section>
+
+      <!-- Project Preview Section -->
+      <section class="animate">
+        <div class="space-y-4">
+          <div class="flex justify-between">
+            <p class="font-semibold text-black dark:text-white">
+              Recent projects
+            </p>
+            <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                All projects
+              </span>
+            </a>
+          </div>
+          <ul class="space-y-4">
+            {projects.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <!-- Blog Preview Section -->
@@ -143,7 +171,7 @@ const stack = [
       <section class="animate">
         <div class="space-y-4">
           <p class="font-semibold text-black dark:text-white">
-            Website build with
+            This website was built with
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-5">
             {stack.map(item => (
@@ -154,39 +182,10 @@ const stack = [
               />
             ))}
           </div>
-          <div>
-            Performing reactivity and statefulness, special guest
-            <a href="https://www.solidjs.com/" target="_blank" class="w-fit group underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                SolidJS
-              </span>
-            </a>
-          </div>
         </div>
       </section>
 
-      <!-- Project Preview Section -->
-      <section class="animate">
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Recent projects
-            </p>
-            <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                All projects
-              </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+
 
       <!-- Contact Section -->
       <section class="animate">

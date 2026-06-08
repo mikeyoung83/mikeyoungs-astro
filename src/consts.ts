@@ -3,8 +3,7 @@ import type { Site, Page, Links, Socials } from "@types";
 // Global
 export const SITE: Site = {
   TITLE: "Mike Young",
-  DESCRIPTION:
-    "Welcome to Astro Sphere, a portfolio and blog for designers and developers.",
+  DESCRIPTION: "Welcome to my websitee, a portfolio and blog for Mike Young.",
   AUTHOR: "Mark Horn",
 };
 
@@ -39,16 +38,16 @@ export const LINKS: Links = [
     HREF: "/",
   },
   {
+    TEXT: "Projects",
+    HREF: "/projects",
+  },
+  {
     TEXT: "Work",
     HREF: "/work",
   },
   {
     TEXT: "Blog",
     HREF: "/blog",
-  },
-  {
-    TEXT: "Projects",
-    HREF: "/projects",
   },
 ];
 
@@ -57,25 +56,19 @@ export const SOCIALS: Socials = [
   {
     NAME: "Email",
     ICON: "email",
-    TEXT: "markhorn.dev@gmail.com",
-    HREF: "mailto:markhorn.dev@gmail.com",
+    TEXT: "mikeby83@gmail.com",
+    HREF: "mailto:mikeby83@gmail.com",
   },
   {
     NAME: "Github",
     ICON: "github",
-    TEXT: "markhorn-dev",
-    HREF: "https://github.com/markhorn-dev/astro-sphere",
+    TEXT: "mikeyoung83",
+    HREF: "https://github.com/mikeyoung83",
   },
   {
     NAME: "LinkedIn",
     ICON: "linkedin",
-    TEXT: "markhorn-dev",
-    HREF: "https://www.linkedin.com/in/markhorn-dev/",
-  },
-  {
-    NAME: "Twitter",
-    ICON: "twitter-x",
-    TEXT: "markhorn_dev",
-    HREF: "https://twitter.com/markhorn_dev",
+    TEXT: "mike-young",
+    HREF: "https://www.linkedin.com/in/mike-young-283b80140/",
   },
 ];
