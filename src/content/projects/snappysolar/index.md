@@ -9,7 +9,7 @@ tags:
 - CSS
 - JavaScript
 demoUrl: https://www.snappysolar.com/
-projectColor: '#274C5E'
+projectColor: '#274D5E'
 ---
 
 A lead generating website for business owners seeking loans, this was a fun project which began with a custom logo. Clean design and vivid people photography bring this site to life.  

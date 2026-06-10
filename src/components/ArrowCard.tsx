@@ -8,17 +8,16 @@ type Props = {
 };
 
 export default function ArrowCard({ entry, pill, projectColor }: Props) {
-  console.log("Project Color:", projectColor, "Collection:", entry.collection);
-  const gradientStyle =
+  const borderStyle =
     entry.collection === "projects" && projectColor
-      ? `background: linear-gradient(to right, ${projectColor}3A, transparent 70%);`
+      ? `border-color: ${projectColor};`
       : "";
 
   return (
     <a
       href={`/${entry.collection}/${entry.slug}`}
       class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out"
-      style={gradientStyle}
+      style={borderStyle}
     >
       <div class="w-full group-hover:text-black group-hover:dark:text-white blend">
         <div class="flex flex-wrap items-center gap-2">
@@ -31,7 +30,7 @@ export default function ArrowCard({ entry, pill, projectColor }: Props) {
             <div class="text-sm uppercase">{formatDate(entry.data.date)}</div>
           )}
         </div>
-        <div class="font-semibold mt-3 text-black dark:text-white line-clamp-2">
+        <div class="font-semibold text-black dark:text-white line-clamp-2">
           {entry.data.title}
         </div>
 
@@ -58,6 +57,11 @@ export default function ArrowCard({ entry, pill, projectColor }: Props) {
         stroke-linecap="round"
         stroke-linejoin="round"
         class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white"
+        style={
+          entry.collection === "projects" && projectColor
+            ? { stroke: projectColor }
+            : {}
+        }
       >
         <line
           x1="5"
