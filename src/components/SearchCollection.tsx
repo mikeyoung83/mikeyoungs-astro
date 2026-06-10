@@ -12,13 +12,16 @@ type Props = {
 };
 
 export default function SearchCollection({ entry_name, data, tags }: Props) {
-  const coerced = data.map((entry) => entry as CollectionEntry<"blog">);
+  const coerced = data as (
+    | CollectionEntry<"blog">
+    | CollectionEntry<"projects">
+  )[];
 
   const [query, setQuery] = createSignal("");
   const [filter, setFilter] = createSignal(new Set<string>());
-  const [collection, setCollection] = createSignal<CollectionEntry<"blog">[]>(
-    [],
-  );
+  const [collection, setCollection] = createSignal<
+    (CollectionEntry<"blog"> | CollectionEntry<"projects">)[]
+  >([]);
   const [descending, setDescending] = createSignal(false);
 
   const fuse = new Fuse(coerced, {
@@ -170,7 +173,14 @@ export default function SearchCollection({ entry_name, data, tags }: Props) {
           <ul class="flex flex-col gap-3">
             {collection().map((entry) => (
               <li>
-                <ArrowCard entry={entry} />
+                <ArrowCard
+                  entry={entry}
+                  projectColor={
+                    entry.collection === "projects"
+                      ? (entry.data as any).projectColor
+                      : undefined
+                  }
+                />
               </li>
             ))}
           </ul>
