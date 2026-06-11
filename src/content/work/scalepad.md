@@ -5,9 +5,12 @@ dateStart: "03/01/2022"
 dateEnd: "Present"
 ---
 
-Responsible for all stages of development, including coding, testing, and related documentation on a variety of public and interior facing websites; produced production-ready user interfaces for large-scale consumption using the Agile development practice.
+Sole front-end developer for the marketing division, managing the end-to-end development, architecture, and maintenance of the corporate SaaS marketing website and web properties using WordPress.
 
-Participated in design and review meetings for both local and corporate initiatives.
-Produced video (shooting and editing), podcasts and other media that helped inspire and expand audience reach and engagement.
+Engineered highly interactive, bespoke landing pages and digital campaign assets from scratch using custom CSS and JavaScript, successfully elevating brand positioning and supporting major product launches.
 
-Responsible for creating and exporting static and animated branded programmatic web banners at various sizes.
+Partnered with design teams to translate high-fidelity Figma mockups into pixel-perfect, high-performance web experiences, ensuring strict adherence to responsive design principles and brand standards.
+
+Collaborated closely across the marketing division to align creative strategies with technical execution; utilized Asana to prioritize project pipelines, manage campaign timelines, and ensure seamless delivery.
+
+Optimized site performance, SEO foundations, and user experience workflows to improve page load speeds, maximize engagement, and drive inbound lead generation.
