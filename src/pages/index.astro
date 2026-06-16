@@ -137,7 +137,10 @@ const yearsOfExperience = currentYear - startYear;
           <ul class="space-y-4">
             {projects.map((project) => (
               <li>
-                <ArrowCard entry={project} />
+                <ArrowCard
+                  entry={project}
+                  projectColor={project.data.projectColor}
+                />
               </li>
             ))}
           </ul>
