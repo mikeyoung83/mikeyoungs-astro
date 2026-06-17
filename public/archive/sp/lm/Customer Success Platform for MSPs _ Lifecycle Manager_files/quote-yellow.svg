@@ -1,0 +1,13 @@
+<svg id="Blue_Quote" data-name="Blue Quote" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="399.762" height="277.444" viewBox="0 0 399.762 277.444">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_62" data-name="Rectangle 62" width="399.762" height="277.444" fill="#eba900"/>
+    </clipPath>
+  </defs>
+  <g id="Group_134" data-name="Group 134" transform="translate(0 236.668)">
+    <g id="Group_133" data-name="Group 133" transform="translate(0 -236.668)" clip-path="url(#clip-path)">
+      <path id="Path_75" data-name="Path 75" d="M373.08,99.445c9.258-16.832,26.09-34.927,54.7-52.18A25.664,25.664,0,0,0,440.83,25.383c0-18.094-18.516-30.718-35.348-23.144C356.669,23.7,275.454,77.142,275.454,187.813a89.421,89.421,0,0,0,178.841.42c0-46.709-35.768-84.581-81.215-88.789" transform="translate(-54.533 0)" fill="#eba900"/>
+      <path id="Path_76" data-name="Path 76" d="M97.205,99.445c9.258-16.832,26.09-34.927,54.7-52.18a25.664,25.664,0,0,0,13.045-21.882c0-18.094-18.516-30.718-35.348-23.144C81.215,23.7,0,77.142,0,187.813a89.421,89.421,0,1,0,178.841,0c0-46.289-35.768-84.16-81.636-88.369" transform="translate(0 0)" fill="#eba900"/>
+    </g>
+  </g>
+</svg>
