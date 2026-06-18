@@ -5,9 +5,10 @@ dateStart: "07/01/2018"
 dateEnd: "03/01/2022"
 ---
 
-Responsible for all stages of development, including coding, testing, and related documentation on a variety of public and interior facing websites; produced production-ready user interfaces for large-scale consumption using the Agile development practice.
+Engineered public and internal high-traffic web properties across the full development lifecycle within an Agile/Scrum framework, participating in active sprint cycles and retrospectives to optimize team delivery.
 
-Participated in design and review meetings for both local and corporate initiatives.
-Produced video (shooting and editing), podcasts and other media that helped inspire and expand audience reach and engagement.
+Translated complex creative briefs into production-ready digital campaign assets, developing high-performance static and animated programmatic web banners tailored for large-scale financial marketing initiatives.
 
-Responsible for creating and exporting static and animated branded programmatic web banners at various sizes.
+Produced multi-channel multimedia content—including video and podcast assets—expanding brand reach and modernizing digital audience engagement channels.
+
+Bridged the gap between creative and technical requirements in corporate design review meetings, collaborating with cross-functional stakeholders to ensure technical feasibility and UI precision.

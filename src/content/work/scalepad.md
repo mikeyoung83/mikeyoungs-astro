@@ -2,15 +2,17 @@
 company: "ScalePad"
 role: "Front End Developer"
 dateStart: "03/01/2022"
-dateEnd: "Present"
+dateEnd: "06/01/2026"
 ---
 
-Sole front-end developer for the marketing division, managing the end-to-end development, architecture, and maintenance of the corporate SaaS marketing website and web properties using WordPress.
+Sole front-end developer for the marketing division; own the end-to-end architecture, development, and maintenance of the corporate SaaS marketing website and all web properties using WordPress.
 
-Engineered highly interactive, bespoke landing pages and digital campaign assets from scratch using custom CSS and JavaScript, successfully elevating brand positioning and supporting major product launches.
+Drove a 20% increase in Google PageSpeed Insights performance scores and optimized Core Web Vitals by architecting advanced caching strategies, configuring CDNs, and implementing automated image optimization pipelines to maximize SEO and user engagement.
 
-Partnered with design teams to translate high-fidelity Figma mockups into pixel-perfect, high-performance web experiences, ensuring strict adherence to responsive design principles and brand standards.
+Engineered highly interactive bespoke landing pages and digital campaign assets from scratch using custom CSS and JavaScript, directly supporting major product launches and elevating brand positioning.
 
-Collaborated closely across the marketing division to align creative strategies with technical execution; utilized Asana to prioritize project pipelines, manage campaign timelines, and ensure seamless delivery.
+Translated high-fidelity Figma mockups into pixel-perfect, high-performance web experiences with strict adherence to responsive design principles, brand standards, and WCAG accessibility guidelines.
 
-Optimized site performance, SEO foundations, and user experience workflows to improve page load speeds, maximize engagement, and drive inbound lead generation.
+Integrated AI-assisted tools into daily development workflow — leveraging GitHub Copilot and LLM-based code review to accelerate build cycles, reduce repetitive overhead, and maintain higher output quality.
+
+Optimized site performance and Core Web Vitals — improving page load speeds and SEO foundations to maximize engagement and drive inbound lead generation.
