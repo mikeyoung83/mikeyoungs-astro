@@ -15,8 +15,8 @@ projectColor: '#112D3C'
 ## Project Overview
 ScalePad is a fast-growing SaaS company that needed to scale its marketing site into a high-performance, conversion-oriented platform. I led the front-end transition away from an unmaintainable Webflow setup into a highly structured, custom WordPress ecosystem on WPEngine. The mission was threefold: execute a comprehensive corporate rebrand, engineer a flexible publishing system for content authors, and aggressively optimize conversion paths to accelerate inbound SaaS demo signups.
 
-- <b>My Role</b>: Front End Developer (UI Execution, Template Architecture, Analytics Integration)
-- <b>The Stack</b>: WordPress, PHP, Oxygen Builder, Tailwind CSS, WPEngine
+- **My Role**: Front End Developer (UI Execution, Template Architecture, Analytics Integration)
+- **The Stack**: WordPress, PHP, Oxygen Builder, Tailwind CSS, WPEngine
 
 ![Homepage](./img/scalepad_1.png)
 
@@ -36,7 +36,21 @@ To eliminate the content bottleneck and execute the multi-product rebrand smooth
 
 ![Form](./img/scalepad_3.png)
 
-### Key Implementations & Web Inventions
+### Technical Execution
+To support ScalePad’s high-traffic marketing demands, the engineering focus was placed heavily on performance optimization, scalable tracking architecture, and robust platform security.
+
+- **Aggressive Performance Optimization:** Transitioning away from legacy platforms required meeting strict Core Web Vitals benchmarks. By migrating the architecture to **WPEngine** and configuring its enterprise Speed Boost tools, I achieved a **20% increase in Google PageSpeed Insights** scores. This pipeline was optimized to handle automated HTML/CSS minification, image transcoding into modern `.webp` formats, and seamless static asset delivery via a global Content Delivery Network (CDN).
+- **Scalable Tracking Architecture via GTM:** As the core point of contact for marketing analytics, I initially managed script injections directly inside global PHP header templates. To scale efficiently, I migrated the entire tracking infrastructure over to **Google Tag Manager (GTM)**. This centralized tracking layer completely decoupled analytics from the core codebase. It allowed the performance marketing team to safely deploy, edit, and audit tracking tags (such as HubSpot or Google Analytics) autonomously, removing the developer bottleneck and eliminating the need to grant non-technical staff administrative WordPress access.
+- **Enterprise-Grade Platform Hardening:** Given the visibility of a multi-product SaaS brand, securing the WordPress core was paramount. I systematically locked down the authentication layer by obfuscating the default `/wp-admin` entry point to a custom, non-standard URL to mitigate brute-force automated attacks. Furthermore, I enforced strict, platform-wide multi-factor authentication, requiring mandatory **2FA configuration** for all user roles prior to dashboard access.
 
 
-<a href="/archive/sp/home/index.html" target="_blank" rel="noopener noreferrer">Visit Example Website</a>
+### Key Implementations & Web Archives
+
+During my tenure, I engineered, maintained, and optimized key pillars of ScalePad's digital marketing ecosystem. Explore the live static archives below to view the front-end layouts and design systems in action:
+
+- **The Homepage:** The central, high-conversion entry point optimized for multi-product positioning and brand authority. <a href="/archive/sp/home/index.html" target="_blank" rel="noopener noreferrer">Explore Live Archive</a>
+- **Lifecycle Manager:** The primary marketing hub for ScalePad's flagship "Lifecycle Manager" software, engineered to highlight feature benefits and capture qualified free demo form submissions. <a href="/archive/sp/lm/index.html" target="_blank" rel="noopener noreferrer">Explore Live Archive</a>
+- **SaaS Landing Page:** A highly targeted, ad-driven landing experience tailored for MSPs to showcase deep visibility tools into client software usage, risk management, and wasted spend. <a href="/archive/sp/saas/index.html" target="_blank" rel="noopener noreferrer">Explore Live Archive</a>
+- **Webinar Signup:** A highly streamlined, action-oriented conversion funnel designed to guide visitors into ScalePad's active Discord channel for live technical exploration sessions. <a href="/archive/sp/discord/index.html" target="_blank" rel="noopener noreferrer">Explore Live Archive</a>
+- **Industry Events:** A dynamic, centralized event directory and calendar interface displaying ScalePad's corporate web events alongside upcoming physical industry tradeshows. <a href="/archive/sp/events/index.html" target="_blank" rel="noopener noreferrer">Explore Live Archive</a>
+- **Ignition:** The digital presentation surface built for ScalePad's annual flagship recorded broadcast, designed to unveil major software updates, upcoming products, and new features. <a href="/archive/sp/ignition/index.html" target="_blank" rel="noopener noreferrer">Explore Live Archive</a>
