@@ -9,7 +9,7 @@
 @layer base {
   @font-face {
     font-family: "Atkinson";
-    src: url("/fonts/atkinson-regular.woff") format("woff");
+    src: url("/fonts/atkinson-regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -17,7 +17,7 @@
 
   @font-face {
     font-family: "Atkinson";
-    src: url("/fonts/atkinson-bold.woff") format("woff");
+    src: url("/fonts/atkinson-bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -88,6 +88,23 @@ article {
   to {
     transform: translateY(-2000px);
   }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+#particles1, #particles2, #particles3,
+#stars1, #stars2, #stars3 {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 /** styles for public /animation.js */
