@@ -10,8 +10,6 @@ const work = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/work" }),
   schema: z.object({
     company: z.string(),
-    /** Optional one-line description of the company, shown under its name */
-    companyDescription: z.string().optional(),
     role: z.string(),
     dateStart: z.coerce.date(),
     dateEnd: z.union([z.coerce.date(), z.string()]),

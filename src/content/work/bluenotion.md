@@ -1,6 +1,5 @@
 ---
 company: "Bluenotion"
-companyDescription: "Digital agency specializing in web design"
 role: "Front End Designer"
 dateStart: "10/01/2010"
 dateEnd: "08/01/2014"
