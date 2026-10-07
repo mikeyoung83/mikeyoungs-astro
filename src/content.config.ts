@@ -3,7 +3,7 @@
 // folder (index.md + images) so relative image paths in the Markdown resolve.
 
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const work = defineCollection({
@@ -52,4 +52,14 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { work, blog, projects, legal };
+// Grouped skills for the home page, in display order
+const skills = defineCollection({
+  loader: file("./src/content/skills.json"),
+  schema: z.object({
+    order: z.number(),
+    label: z.string(),
+    items: z.array(z.string()),
+  }),
+});
+
+export const collections = { work, blog, projects, legal, skills };

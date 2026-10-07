@@ -3,6 +3,7 @@ import { getCollection } from "astro:content"
 import BaseLayout from "@layouts/BaseLayout.astro"
 import ArrowCard from "@components/ArrowCard.astro"
 import StackCard from "@components/StackCard.astro"
+import Skills from "@components/Skills.astro"
 import { SITE, SOCIALS, RESUME_URL } from "@consts"
 import TwinklingStars from "@components/TwinklingStars.astro"
 import MeteorShower from "@components/MeteorShower.astro"
@@ -132,6 +133,11 @@ const yearsOfExperience = currentYear - startYear;
 
             <p>I thrive in the space where design systems meet production-ready code. My approach relies on web fundamentals—leveraging semantic structures, lean layout architecture, and fluid responsive design to eliminate client-side bloat. Whether I'm mapping a frictionless multi-step user flow or optimizing templates for maximum conversion and speed, I ensure the presentation layer is as highly performant as it is visually polished.</p>
         </article>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="animate">
+        <Skills />
       </section>
 
       <!-- Project Preview Section -->
