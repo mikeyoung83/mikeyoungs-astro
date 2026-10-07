@@ -1,6 +1,6 @@
 ---
 title: "Encore Loan"
-summary: "A warm, approachable personal loan lead generation site engineered for high conversion rates and effortless user onboarding."
+summary: "A warm, approachable personal loan lead generation site built for high conversion and easy onboarding."
 date: "Mar 18 2022"
 draft: false
 tags:
@@ -13,7 +13,7 @@ projectColor: '#FEC635'
 ---
 
 ## Project Overview
-Encore Loan is a fast, high-converting lead generation platform built to connect individuals with personal loan options. While financial sites can often feel cold or intimidating, the goal for Encore was to wrap a high-performance customer acquisition funnel in a warm, welcoming, and incredibly friendly user experience.
+Encore Loan is a fast, high-converting lead generation platform built to connect individuals with personal loan options. While financial sites can often feel cold or intimidating, the goal for Encore was to wrap a high-performance customer acquisition funnel in a warm, welcoming and friendly user experience.
 
 - <b>My Role</b>: Branding, UI/UX Design, Front-End Development
 - <b>The Stack</b>: PHP, HTML, CSS, Vanilla JavaScript
