@@ -93,19 +93,28 @@ const yearsOfExperience = currentYear - startYear;
           <p class='animated mt-2 text-lg md:text-xl lg:text-2xl font-semibold text-base-content'>
               Senior Front-End Developer
           </p>
-          <p class='animated mt-6 text-sm md:text-base lg:text-lg opacity-75 mx-auto max-w-md'>
-              {yearsOfExperience} years building fast, accessible sites with WordPress, Astro and Tailwind CSS.
+          <p class='animated mt-2 text-xs md:text-sm uppercase tracking-wide'>
+              WordPress &amp; PHP · Astro &amp; TypeScript · Tailwind CSS · Performance &amp; accessibility
           </p>
-          <p class='animated mt-4 inline-flex items-center gap-2 text-sm md:text-base'>
+          <p class='animated mt-4 mb-8 inline-flex items-center gap-2 text-sm md:text-base'>
               <span class='status status-success status-md' aria-hidden='true'></span>
               Canada-based · Open to remote roles
           </p>
-          <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-8'>
+          <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
+              I've been creating for the web for <strong>{yearsOfExperience} years.</strong>
+          </p>
+          <p class='animated text-sm md:text-base lg:text-lg opacity-75 mx-auto max-w-(--breakpoint-sm) p-5'>
+              Driven by the love of creating beautiful things and passionate about usability, I always strive to create websites that balance style and efficiency.
+          </p>
+          <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
             <a href='/projects' class='py-2 px-4 rounded-sm truncate text-xs md:text-sm lg:text-base bg-primary text-primary-content hover:opacity-75 blend'>
               View my projects
             </a>
+            <a href='/work' class='py-2 px-4 truncate rounded-sm text-xs md:text-sm lg:text-base border border-base-content/25 hover:bg-base-content/5 dark:hover:bg-base-content/15 blend'>
+              View my work history
+            </a>
             <a href={RESUME_URL} download class='py-2 px-4 truncate rounded-sm text-xs md:text-sm lg:text-base border border-base-content/25 hover:bg-base-content/5 dark:hover:bg-base-content/15 blend'>
-              Download résumé
+              Download résumé (PDF)
             </a>
           </div>
         </div>
@@ -121,7 +130,6 @@ const yearsOfExperience = currentYear - startYear;
         <article>
             <p>I’ve spent the last <strong>{yearsOfExperience} years</strong> bridging the gap between product design and engineering.</p>
             <p>From building brand identities to developing fast front ends, I focus on accessible websites that balance clean design with technical efficiency.</p>
-            <p>Driven by the love of creating beautiful things and passionate about usability, I always strive to create websites that balance style and efficiency.</p>
 
             <p>I thrive in the space where design systems meet production-ready code. My approach relies on web fundamentals—leveraging semantic structures, lean layout architecture, and fluid responsive design to eliminate client-side bloat. Whether I'm mapping a frictionless multi-step user flow or optimizing templates for maximum conversion and speed, I ensure the presentation layer is as highly performant as it is visually polished.</p>
         </article>
