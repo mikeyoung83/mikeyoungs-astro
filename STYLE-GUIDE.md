@@ -21,11 +21,12 @@ Calm, competent, understated, craft-focused, with a bit of personality in the bl
 **Voice dos and don'ts**
 - Do: write in the first person ("I"). In professional copy, pair design and engineering ("balance style and efficiency") and lead with web fundamentals: semantic HTML, performance and accessibility. Blog posts are casual and conversational ("Bob's your uncle").
 - Don't: hype or exclamation-heavy sales copy. Avoid agency "we" language and buzzword lists without substance.
+- Don't (from a recruiter-focused review, 2026-10-07): inflated verbs and labels like "engineered", "architecting", "bulletproof", "enterprise-grade", "aggressive(ly)", "cutting-edge", "incredibly". Say plainly what was built and what changed, and use real numbers where possible.
 
 **One line of example copy in this voice**
 "Driven by the love of creating beautiful things and passionate about usability, I always strive to create websites that balance style and efficiency."
 
-**Copy status:** the copy is Mike's own and final. Fix outright typos and grammar only, and ask before rewriting anything. Known typos in the blog posts that are still unfixed: "leaveing" and "Batocerta" in `blog/arcade`.
+**Copy status:** the copy is Mike's own. Fix outright typos and grammar without asking. Any other wording change gets shown to Mike for approval first. Known typos in the blog posts that are still unfixed: "leaveing" and "Batocerta" in `blog/arcade`.
 
 ---
 
