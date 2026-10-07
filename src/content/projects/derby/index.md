@@ -22,7 +22,7 @@ The Renegade Derby Dames are a local, community-driven roller derby league that 
 ![Homepage](./img/derby_1.png)
 
 ### The Challenge
-Sports leagues run on dynamic data—rosters change, game dates shift, and scores need updating. The client needed a platform that could handle these frequent updates without requiring a developer every time a match was scheduled. The main challenge was delivering an incredibly fast, media-heavy site that captured the gritty, high-energy aesthetic of roller derby, while providing an effortlessly simple editing workflow for non-technical team volunteers.
+Sports leagues run on dynamic data—rosters change, game dates shift, and scores need updating. The client needed a platform that could handle these frequent updates without requiring a developer every time a match was scheduled. The main challenge was delivering a fast, media-heavy site that captured the gritty, high-energy aesthetic of roller derby, while providing an effortlessly simple editing workflow for non-technical team volunteers.
 
 ![Information](./img/derby_2.png)
 
@@ -39,5 +39,5 @@ I designed a vibrant, punchy user interface that focuses heavily on player ident
 To bridge the gap between static performance and dynamic content editing, I moved away from traditional heavy CMS setups and chose a modern component-driven architecture.
 
 - <b>Component-Driven Performance with Astro:</b> Built the site using **Astro**, allowing me to leverage a component-driven workflow that compiles down to zero-JavaScript HTML by default. This keeps the media-heavy skater profiles and match galleries loading instantly.
-- <b>Utility-First Styling with Tailwind:</b> Used **Tailwind CSS** to handle the layout and responsive styling. This made it incredibly easy to rapidly prototype the aggressive, modern design lines and maintain a consistent layout system across both small mobile screens and large desktop displays.
+- <b>Utility-First Styling with Tailwind:</b> Used **Tailwind CSS** to handle the layout and responsive styling. This made it easy to prototype the aggressive, modern design lines quickly and maintain a consistent layout system across both small mobile screens and large desktop displays.
 - <b>Git-Backed Content Management:</b> Connected the site to a tailored markdown-based CMS. When volunteers modify the schedule or roster through the visual editor, it directly updates the repository data, triggering an automated static rebuild and ensuring the live site stays lightning fast with zero database overhead.
