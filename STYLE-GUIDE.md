@@ -36,6 +36,8 @@ Strictly monochrome: black on white, inverted for dark mode. Color appears
 only in **project cards**, where each project's own brand color
 (`projectColor` in its frontmatter) tints the card border and arrow. Those
 values are client brand colors stored as content data, not theme tokens.
+The one other spot of color is the green `status-success` dot next to
+"Open to remote roles" in the home hero.
 
 Two custom daisyUI themes are defined in `src/styles/global.css`:
 
