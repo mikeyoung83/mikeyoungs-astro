@@ -12,6 +12,11 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    // Pre-bundle the search library so the dev server doesn't discover it on
+    // first page load and invalidate in-flight modules (504 Outdated Optimize Dep).
+    optimizeDeps: {
+      include: ["fuse.js"],
+    },
   },
 
   // Atkinson Hyperlegible, self-hosted from src/assets/fonts. cssVariable is

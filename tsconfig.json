@@ -4,8 +4,15 @@
   "exclude": ["dist", "public"],
   "compilerOptions": {
     "baseUrl": ".",
+    // Explicit aliases only. A catch-all "@*" also captures package imports
+    // like "@vite/env" and breaks the dev server.
     "paths": {
-      "@*": ["src/*"]
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@lib/*": ["src/lib/*"],
+      "@styles/*": ["src/styles/*"],
+      "@consts": ["src/consts.ts"],
+      "@types": ["src/types.ts"]
     }
   }
 }
