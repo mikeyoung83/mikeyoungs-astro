@@ -3,6 +3,6 @@
   {"id": "frameworks", "order": 2, "label": "Frameworks & CMS", "items": ["Astro", "WordPress (custom themes & plugins)", "Tailwind CSS", "Headless CMS", "jQuery", "Bootstrap"]},
   {"id": "design", "order": 3, "label": "Design", "items": ["Figma", "Adobe XD", "Photoshop", "Illustrator", "UI/UX", "Wireframing"]},
   {"id": "performance", "order": 4, "label": "Performance & accessibility", "items": ["Core Web Vitals", "Lighthouse", "WCAG 2.1 / AODA", "Semantic SEO"]},
-  {"id": "ai", "order": 5, "label": "AI tools", "items": ["GitHub Copilot", "Ollama / local LLMs", "AI-assisted prototyping"]},
+  {"id": "ai", "order": 5, "label": "AI tools", "items": ["Claude Code in Zed", "Custom Claude skills & project instructions (CLAUDE.md)", "AI-assisted code review", "AI-assisted prototyping"]},
   {"id": "workflow", "order": 6, "label": "Workflow", "items": ["Git", "Netlify", "Google Tag Manager", "Asana", "Agile / Scrum"]}
 ]
