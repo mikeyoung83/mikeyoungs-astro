@@ -113,7 +113,7 @@ don't restyle or refactor them.
 
 *Claude: before building or substantially revising a page, check for files matching `inspiration/<page>-*.{jpg,jpeg,png,webp}` (e.g. `projects-1.jpg`); a bare `<page>.jpg` also counts. If any exist, view them and treat them as loose reference for layout, hierarchy and finesse only. Never copy exact copy, logos or brand assets from someone else's real site. If none exist for a page, build it from this guide alone and say nothing about the missing file.*
 
-**Using it?** Not decided yet. Ask once, and if the answer is no, record "No" here.
+**Using it?** No (decided 2026-10-07). Don't bring it up again unless Mike asks.
 
 ---
 
