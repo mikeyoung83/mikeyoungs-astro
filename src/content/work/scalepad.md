@@ -13,4 +13,4 @@ Built interactive custom landing pages and campaign assets from scratch in CSS a
 
 Translated high-fidelity Figma mockups into pixel-perfect, high-performance web experiences with strict adherence to responsive design principles, brand standards, and WCAG accessibility guidelines.
 
-Integrated AI-assisted tools into daily development workflow — leveraging GitHub Copilot and LLM-based code review to accelerate build cycles, reduce repetitive overhead, and maintain higher output quality.
+Integrated AI-assisted tools into daily development workflow — using Claude for coding and code review to accelerate build cycles, reduce repetitive overhead, and maintain higher output quality.
