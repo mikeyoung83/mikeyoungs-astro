@@ -1,5 +1,6 @@
 ---
 company: "Intimate Interactive Advertising"
+companyDescription: "Performance marketing & lead-generation agency"
 role: "Lead Web Designer"
 dateStart: "08/01/2014"
 dateEnd: "07/01/2018"
