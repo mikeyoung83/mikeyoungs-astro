@@ -5,7 +5,7 @@ dateStart: "07/01/2018"
 dateEnd: "03/01/2022"
 ---
 
-Engineered public and internal high-traffic web properties across the full development lifecycle within an Agile/Scrum framework, participating in active sprint cycles and retrospectives to optimize team delivery.
+Built and maintained high-traffic public and internal web properties across the full development lifecycle, working in Agile/Scrum sprints and retrospectives.
 
 Translated complex creative briefs into production-ready digital campaign assets, developing high-performance static and animated programmatic web banners tailored for large-scale financial marketing initiatives.
 
