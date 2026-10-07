@@ -1,0 +1,89 @@
+---
+// Site-wide search across blog posts and projects (Fuse.js). All result
+// cards are rendered at build time and hidden; the script shows and orders
+// the matches.
+import type { CollectionEntry } from "astro:content";
+import ArrowCard from "@components/ArrowCard.astro";
+import SearchInput from "@components/SearchInput.astro";
+
+interface Props {
+  entries: (CollectionEntry<"blog"> | CollectionEntry<"projects">)[];
+}
+
+const { entries } = Astro.props;
+
+const index = entries.map((entry) => ({
+  key: `${entry.collection}/${entry.id}`,
+  id: entry.id,
+  title: entry.data.title,
+  summary: entry.data.summary,
+  tags: entry.data.tags,
+}));
+---
+
+<site-search class="flex flex-col">
+  <script type="application/json" data-index set:html={JSON.stringify(index)} />
+
+  <SearchInput label="Search blog posts and projects" placeholder="What are you looking for?" />
+
+  <div class="mt-12" data-results hidden>
+    <div class="text-sm uppercase mb-2" data-summary></div>
+    <ul class="flex flex-col gap-3" data-list>
+      {
+        entries.map((entry) => (
+          <li data-key={`${entry.collection}/${entry.id}`} hidden>
+            <ArrowCard entry={entry} pill />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <p class="sr-only" aria-live="polite" data-status></p>
+</site-search>
+
+<script>
+  import Fuse from "fuse.js";
+
+  type IndexEntry = { key: string; id: string; title: string; summary: string; tags: string[] };
+
+  class SiteSearch extends HTMLElement {
+    connectedCallback() {
+      const index: IndexEntry[] = JSON.parse(this.querySelector("[data-index]")?.textContent ?? "[]");
+      const fuse = new Fuse(index, {
+        keys: ["id", "title", "summary", "tags"],
+        minMatchCharLength: 2,
+        threshold: 0.4,
+      });
+
+      const input = this.querySelector<HTMLInputElement>("[data-search-input]")!;
+      const clear = this.querySelector<HTMLButtonElement>("[data-search-clear]")!;
+      const results = this.querySelector<HTMLElement>("[data-results]")!;
+      const summary = this.querySelector("[data-summary]")!;
+      const status = this.querySelector("[data-status]")!;
+      const list = this.querySelector("[data-list]")!;
+      const items = new Map([...list.querySelectorAll<HTMLLIElement>("li[data-key]")].map((li) => [li.dataset.key!, li]));
+
+      const update = () => {
+        const query = input.value.trim();
+        const matches = query.length < 2 ? [] : fuse.search(query).map((result) => result.item);
+        const visible = new Set(matches.map((entry) => entry.key));
+
+        matches.forEach((entry) => list.append(items.get(entry.key)!));
+        items.forEach((li, key) => (li.hidden = !visible.has(key)));
+        results.hidden = matches.length === 0;
+        summary.textContent = `Found ${matches.length} results for '${query}'`;
+        status.textContent = query.length < 2 ? "" : `${matches.length} results`;
+        clear.hidden = input.value.length === 0;
+      };
+
+      input.addEventListener("input", update);
+      clear.addEventListener("click", () => {
+        input.value = "";
+        input.focus();
+        update();
+      });
+    }
+  }
+
+  customElements.define("site-search", SiteSearch);
+</script>

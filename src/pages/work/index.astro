@@ -1,6 +1,6 @@
 ---
-import { getCollection } from "astro:content";
-import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import TopLayout from "@layouts/TopLayout.astro";
 import BottomLayout from "@layouts/BottomLayout.astro";
 import { WORK } from "@consts";
@@ -15,7 +15,7 @@ collection.sort(
 
 const work = await Promise.all(
     collection.map(async (item) => {
-        const { Content } = await item.render();
+        const { Content } = await render(item);
         return { ...item, Content };
     }),
 );
@@ -32,10 +32,10 @@ function formatWorkDate(input: Date | string) {
 }
 ---
 
-<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+<BaseLayout title={WORK.META_TITLE} description={WORK.META_DESCRIPTION}>
     <TopLayout>
         <div class="animate">
-            <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
+            <h1 class="text-3xl font-semibold text-base-content mt-2">
                 {WORK.TITLE}
             </h1>
             <div class="mt-1">
@@ -47,14 +47,14 @@ function formatWorkDate(input: Date | string) {
         <ul>
             {
                 work.map((entry) => (
-                    <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
+                    <li class="animate border-b border-base-content/10 dark:border-base-content/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
                         <div class="text-sm uppercase mb-4">
                             {formatWorkDate(entry.data.dateStart)} -{" "}
                             {formatWorkDate(entry.data.dateEnd)}
                         </div>
-                        <div class="text-black dark:text-white font-semibold">
+                        <h2 class="text-base-content font-semibold">
                             {entry.data.company}
-                        </div>
+                        </h2>
                         <div class="text-sm font-semibold mb-4">
                             {entry.data.role}
                         </div>
@@ -66,4 +66,4 @@ function formatWorkDate(input: Date | string) {
             }
         </ul>
     </BottomLayout>
-</PageLayout>
+</BaseLayout>

@@ -1,33 +1,35 @@
 {
-  "name": "astro-sphere",
+  "name": "mikeyoungs-astro",
   "type": "module",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && eslint . && astro build",
     "preview": "astro preview",
-    "preview:network": "astro dev --host",
     "astro": "astro",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/solid-js": "^4.0.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.4.13",
-    "clsx": "^2.1.0",
-    "fuse.js": "^7.0.0",
-    "sharp": "^0.33.2",
-    "solid-js": "^1.8.15",
-    "tailwind-merge": "^2.2.1",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^6.4.8",
+    "astro-seo": "^1.2.0",
+    "daisyui": "^5.7.47",
+    "fuse.js": "^7.5.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@typescript-eslint/parser": "^8.71.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,29 +1,24 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import TopLayout from "@layouts/TopLayout.astro";
 import BottomLayout from "@layouts/BottomLayout.astro";
-import Search from "@components/Search";
+import SiteSearch from "@components/SiteSearch.astro";
 import { SEARCH } from "@consts";
 
 const posts = (await getCollection("blog")).filter((post) => !post.data.draft);
-
-const projects = (await getCollection("projects")).filter(
-  (post) => !post.data.draft,
-);
-
-const data = [...posts, ...projects] as CollectionEntry<"blog">[];
+const projects = (await getCollection("projects")).filter((project) => !project.data.draft);
 ---
 
-<PageLayout title={SEARCH.TITLE} description={SEARCH.DESCRIPTION}>
+<BaseLayout title={SEARCH.META_TITLE} description={SEARCH.META_DESCRIPTION}>
   <TopLayout>
-    <div class="animate page-heading">
+    <h1 class="animate font-semibold text-base-content">
       {SEARCH.TITLE}
-    </div>
+    </h1>
   </TopLayout>
   <BottomLayout>
     <div class="animate">
-      <Search client:load data={data} />
+      <SiteSearch entries={[...posts, ...projects]} />
     </div>
   </BottomLayout>
-</PageLayout>
+</BaseLayout>

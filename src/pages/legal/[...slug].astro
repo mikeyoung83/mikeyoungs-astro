@@ -1,34 +1,34 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
-import { formatDate } from "@lib/utils"
-import { SITE } from "@consts"
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import { formatDate } from "@lib/utils";
+import { SITE } from "@consts";
 
-// Create the static pages for legal docs
 export async function getStaticPaths() {
-	const docs = await getCollection("legal")
-	return docs.map((doc) => ({
-		params: { slug: doc.slug },
-		props: doc,
-	}))
+  const docs = await getCollection("legal");
+  return docs.map((doc) => ({
+    params: { slug: doc.id },
+    props: doc,
+  }));
 }
 
-// Get the requested legal doc
 type Props = CollectionEntry<"legal">;
-const doc = Astro.props
-const { title, date } = doc.data
-const { Content } = await doc.render();
-
+const doc = Astro.props;
+const { title, date } = doc.data;
+const { Content } = await render(doc);
 ---
 
-<PageLayout title={title} description={`${title} for ${SITE.TITLE}`}>
+<BaseLayout
+  title={title}
+  description={`How ${SITE.TITLE}'s portfolio site handles your data: minimal, anonymous analytics, no tracking or advertising cookies, and links to third-party sites.`}
+>
   <TopLayout>
     <div class="animate">
-      <div class="page-heading">
+      <h1 class="font-semibold text-base-content">
         {title}
-      </div>
+      </h1>
       <p class="font-normal opacity-75">
         Last updated: {formatDate(date)}
       </p>
@@ -36,7 +36,7 @@ const { Content } = await doc.render();
   </TopLayout>
   <BottomLayout>
     <article class="animate">
-      <Content/>
+      <Content />
     </article>
   </BottomLayout>
-</PageLayout>
+</BaseLayout>

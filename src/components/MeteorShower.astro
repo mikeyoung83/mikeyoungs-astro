@@ -1,42 +1,35 @@
 ---
 /**
- * Meteors.astro
- * This component creates meteors that are appended to the galaxy on interval.
- * Meteors are removed from the document after the animation is completed.
- * There are four (4) meteor shower containers, one for each diagonal direction.
+ * MeteorShower.astro
+ * Appends meteors to one of four diagonal "shower" containers on an
+ * interval; each is removed once its animation finishes. Rotations and the
+ * meteor style live in global.css.
  */
 ---
 
-<div id="meteors">
-  <!-- rotations defined in base.css & tailwind.config.mjs -->
-  <div class="shower ur" />
-  <div class="shower dr" /> 
-  <div class="shower dl" />
-  <div class="shower ul" />
+<div id="meteors" aria-hidden="true">
+  <div class="shower ur"></div>
+  <div class="shower dr"></div>
+  <div class="shower dl"></div>
+  <div class="shower ul"></div>
 </div>
 
 <script>
-  function createMeteor () {
-  // create a meteor
-  let meteor = document.createElement("div");
-  meteor.setAttribute("class", "meteor");
-  meteor.style.left = Math.round(Math.random() * window.innerWidth) + "px";
-  meteor.style.top  = Math.round(Math.random() * window.innerHeight) + "px";
-  
-  // append the meteor to a random meteor shower (direction)
-  const showers = document.querySelectorAll(".shower");
-  if (showers.length > 0) {
-    const random = Math.floor(Math.random() * showers.length);
-    const shower = showers[random];
-    shower.append(meteor);
+  function createMeteor() {
+    const meteor = document.createElement("div");
+    meteor.setAttribute("class", "meteor");
+    meteor.style.left = Math.round(Math.random() * window.innerWidth) + "px";
+    meteor.style.top = Math.round(Math.random() * window.innerHeight) + "px";
+
+    const showers = document.querySelectorAll(".shower");
+    if (showers.length > 0) {
+      showers[Math.floor(Math.random() * showers.length)].append(meteor);
+    }
+
+    setTimeout(() => meteor.remove(), 3500);
   }
 
-  // remove the meteor after the animation duration
-  setTimeout(() => {
-    meteor.remove();
-  }, 3500);
-}
-
-// Create meteors on interval on two (2) seconds
-setInterval(createMeteor, 1500);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setInterval(createMeteor, 1500);
+  }
 </script>

@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDate, truncateText } from "@lib/utils";
+
+interface Props {
+  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
+  /** Show a "post"/"project" pill (used on mixed search results) */
+  pill?: boolean;
+}
+
+const { entry, pill = false } = Astro.props;
+// A project's own brand color, from its frontmatter, tints the border and arrow
+const projectColor = entry.collection === "projects" ? entry.data.projectColor : undefined;
+---
+
+<a
+  href={`/${entry.collection}/${entry.id}`}
+  style={projectColor ? `--project-color: ${projectColor}` : undefined}
+  class:list={[
+    "group p-4 gap-3 flex items-center border-2 rounded-lg",
+    "hover:bg-base-content/5 dark:hover:bg-base-content/10",
+    "transition-colors duration-300 ease-in-out",
+    projectColor ? "border-(--project-color)" : "border-base-content/15 dark:border-base-content/20",
+  ]}
+>
+  <div class="w-full group-hover:text-base-content blend">
+    <div class="flex flex-wrap items-center gap-2">
+      {
+        pill && (
+          <div class="text-sm capitalize px-2 py-0.5 rounded-full border border-base-content/15 dark:border-base-content/25">
+            {entry.collection === "blog" ? "post" : "project"}
+          </div>
+        )
+      }
+      {entry.collection !== "projects" && <div class="text-sm uppercase">{formatDate(entry.data.date)}</div>}
+    </div>
+    <div class="font-semibold text-base-content line-clamp-2">{entry.data.title}</div>
+    <div class="text-sm line-clamp-2">{entry.data.summary}</div>
+    <ul class="flex flex-wrap mt-2 gap-1" aria-label="Tags">
+      {
+        entry.data.tags.map((tag) => (
+          <li class="text-xs uppercase py-0.5 px-2 rounded-sm bg-base-content/5 dark:bg-base-content/20 text-base-content/75">
+            {truncateText(tag, 20)}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    class:list={["shrink-0", projectColor ? "stroke-(--project-color)" : "stroke-current group-hover:stroke-base-content"]}
+  >
+    <line
+      x1="5"
+      y1="12"
+      x2="19"
+      y2="12"
+      class="scale-x-0 group-hover:scale-x-100 translate-x-4 group-hover:translate-x-1 transition-all duration-300 ease-in-out"
+    ></line>
+    <polyline
+      points="12 5 19 12 12 19"
+      class="translate-x-0 group-hover:translate-x-1 transition-all duration-300 ease-in-out"></polyline>
+  </svg>
+</a>

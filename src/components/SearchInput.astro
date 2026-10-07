@@ -1,0 +1,38 @@
+---
+// Text input with a search icon and a clear button. Behaviour is wired up by
+// the parent component's script via the data-search-* hooks.
+interface Props {
+  label: string;
+  placeholder: string;
+}
+
+const { label, placeholder } = Astro.props;
+---
+
+<label class="input w-full">
+  <span class="sr-only">{label}</span>
+  <svg class="size-5 shrink-0 stroke-base-content/40" aria-hidden="true">
+    <use href="/ui.svg#search"></use>
+  </svg>
+  <input
+    data-search-input
+    type="text"
+    enterkeyhint="search"
+    name="search"
+    autocomplete="off"
+    spellcheck="false"
+    placeholder={placeholder}
+    class="grow"
+  />
+  <button
+    data-search-clear
+    type="button"
+    hidden
+    aria-label="Clear search"
+    class="shrink-0 stroke-base-content/40 hover:stroke-base-content/75"
+  >
+    <svg class="size-5" aria-hidden="true">
+      <use href="/ui.svg#x"></use>
+    </svg>
+  </button>
+</label>

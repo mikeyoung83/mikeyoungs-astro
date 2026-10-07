@@ -1,0 +1,183 @@
+---
+// Filterable list for a blog/projects index: fuzzy text search (Fuse.js),
+// tag filters (all selected tags must match) and an order toggle. Every card
+// is rendered at build time; the script only hides/reorders them.
+import type { CollectionEntry } from "astro:content";
+import ArrowCard from "@components/ArrowCard.astro";
+import SearchInput from "@components/SearchInput.astro";
+
+interface Props {
+  /** Plural noun used in labels, e.g. "posts" */
+  entryName: string;
+  entries: (CollectionEntry<"blog"> | CollectionEntry<"projects">)[];
+}
+
+const { entryName, entries } = Astro.props;
+
+const tags = [...new Set(entries.flatMap((entry) => entry.data.tags))].sort((a, b) => a.localeCompare(b));
+
+const index = entries.map((entry) => ({
+  id: entry.id,
+  title: entry.data.title,
+  summary: entry.data.summary,
+  tags: entry.data.tags,
+}));
+---
+
+<search-collection class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  <script type="application/json" data-index set:html={JSON.stringify(index)} />
+
+  <!-- Control panel -->
+  <div class="col-span-3 sm:col-span-1">
+    <div class="sticky top-24 mt-7">
+      <SearchInput label={`Search ${entryName}`} placeholder={`Search ${entryName}`} />
+
+      <div class="relative flex flex-row justify-between w-full">
+        <h2 id={`${entryName}-tags-heading`} class="text-sm font-semibold uppercase my-4 text-base-content">Tags</h2>
+        <button
+          data-clear-tags
+          type="button"
+          hidden
+          aria-label="Clear tag filters"
+          class="absolute flex justify-center items-center h-full w-10 right-0 top-0 stroke-base-content/40 hover:stroke-base-content/75"
+        >
+          <svg class="size-5" aria-hidden="true">
+            <use href="/ui.svg#x"></use>
+          </svg>
+        </button>
+      </div>
+      <ul class="flex flex-wrap sm:flex-col gap-1.5" aria-labelledby={`${entryName}-tags-heading`}>
+        {
+          tags.map((tag) => (
+            <li class="sm:w-full">
+              <button
+                type="button"
+                data-tag={tag}
+                aria-pressed="false"
+                class="group w-full px-2 py-1 rounded-sm flex gap-2 items-center bg-base-content/5 dark:bg-base-content/10 hover:bg-base-content/10 dark:hover:bg-base-content/15 aria-pressed:text-base-content transition-colors duration-300 ease-in-out"
+              >
+                <svg
+                  class="shrink-0 size-5 fill-base-content/50 group-aria-pressed:fill-base-content transition-colors duration-300 ease-in-out"
+                  aria-hidden="true"
+                >
+                  <use href="/ui.svg#square" class="block group-aria-pressed:hidden" />
+                  <use href="/ui.svg#square-check" class="hidden group-aria-pressed:block" />
+                </svg>
+                <span class="truncate block min-w-0 pt-0.5">{tag}</span>
+              </button>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="col-span-3 sm:col-span-2">
+    <div class="flex flex-col">
+      <div class="flex justify-between flex-row mb-2">
+        <div class="text-sm uppercase" aria-live="polite">
+          Showing <span data-count>{entries.length}</span> of {entries.length}
+          {entryName}
+        </div>
+        <button
+          data-order
+          aria-pressed="false"
+          type="button"
+          class="group flex flex-row gap-1 stroke-base-content/40 hover:stroke-base-content/75 text-base-content/60 hover:text-base-content/75"
+        >
+          <span class="text-sm uppercase" data-order-label>Ascending</span>
+          <svg class="size-5" aria-hidden="true">
+            <use href="/ui.svg#sort-ascending" class="block group-aria-pressed:hidden"></use>
+            <use href="/ui.svg#sort-descending" class="hidden group-aria-pressed:block"></use>
+          </svg>
+        </button>
+      </div>
+      <ul class="flex flex-col gap-3" data-list>
+        {
+          entries.map((entry) => (
+            <li data-id={entry.id}>
+              <ArrowCard entry={entry} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</search-collection>
+
+<script>
+  import Fuse from "fuse.js";
+
+  type IndexEntry = { id: string; title: string; summary: string; tags: string[] };
+
+  class SearchCollection extends HTMLElement {
+    connectedCallback() {
+      const index: IndexEntry[] = JSON.parse(this.querySelector("[data-index]")?.textContent ?? "[]");
+      const fuse = new Fuse(index, {
+        keys: ["id", "title", "summary", "tags"],
+        minMatchCharLength: 2,
+        threshold: 0.4,
+      });
+
+      const input = this.querySelector<HTMLInputElement>("[data-search-input]")!;
+      const clearSearch = this.querySelector<HTMLButtonElement>("[data-search-clear]")!;
+      const clearTags = this.querySelector<HTMLButtonElement>("[data-clear-tags]")!;
+      const tagButtons = [...this.querySelectorAll<HTMLButtonElement>("[data-tag]")];
+      const orderButton = this.querySelector<HTMLButtonElement>("[data-order]")!;
+      const orderLabel = this.querySelector("[data-order-label]")!;
+      const count = this.querySelector("[data-count]")!;
+      const list = this.querySelector("[data-list]")!;
+      const items = new Map([...list.querySelectorAll<HTMLLIElement>("li[data-id]")].map((li) => [li.dataset.id!, li]));
+
+      const selected = new Set<string>();
+      let reversed = false;
+
+      const update = () => {
+        const query = input.value.trim();
+        const matches = query.length < 2 ? index : fuse.search(query).map((result) => result.item);
+        const filtered = matches.filter((entry) =>
+          [...selected].every((tag) => entry.tags.some((t) => t.toLowerCase() === tag.toLowerCase())),
+        );
+        const ordered = reversed ? filtered.toReversed() : filtered;
+        const visible = new Set(ordered.map((entry) => entry.id));
+
+        ordered.forEach((entry) => list.append(items.get(entry.id)!));
+        items.forEach((li, id) => (li.hidden = !visible.has(id)));
+        count.textContent = String(ordered.length);
+        clearSearch.hidden = input.value.length === 0;
+        clearTags.hidden = selected.size === 0;
+      };
+
+      input.addEventListener("input", update);
+      clearSearch.addEventListener("click", () => {
+        input.value = "";
+        input.focus();
+        update();
+      });
+      tagButtons.forEach((button) =>
+        button.addEventListener("click", () => {
+          const tag = button.dataset.tag!;
+          const on = !selected.has(tag);
+          if (on) selected.add(tag);
+          else selected.delete(tag);
+          button.setAttribute("aria-pressed", String(on));
+          update();
+        }),
+      );
+      clearTags.addEventListener("click", () => {
+        selected.clear();
+        tagButtons.forEach((button) => button.setAttribute("aria-pressed", "false"));
+        update();
+      });
+      orderButton.addEventListener("click", () => {
+        reversed = !reversed;
+        orderButton.setAttribute("aria-pressed", String(reversed));
+        orderLabel.textContent = reversed ? "Descending" : "Ascending";
+        update();
+      });
+    }
+  }
+
+  customElements.define("search-collection", SearchCollection);
+</script>
