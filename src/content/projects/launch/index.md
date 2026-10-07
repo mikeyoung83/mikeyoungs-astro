@@ -1,6 +1,6 @@
 ---
 title: "Launch It Locally"
-summary: "A modern web consulting platform built with Astro and Tailwind CSS, engineered to deliver high-impact digital solutions for local businesses."
+summary: "A web consulting site for local businesses, built with Astro and Tailwind CSS."
 date: "Sep 05 2024"
 draft: false
 tags:
@@ -36,7 +36,7 @@ To build immediate credibility, I focused on an ultra-clean layout that prioriti
 ![Form](./img/launch_3.png)
 
 ### Technical Execution
-To showcase the exact kind of premium web performance being offered to clients, the platform was engineered using a cutting-edge static architecture.
+To show clients the same performance I'd build for them, the site is a statically generated Astro build.
 
 - <b>Zero-JS Baseline with Astro:</b> Built the site using **Astro**, allowing me to utilize a component-based development workflow while outputting pure, lightweight HTML to the client by default. This ensures near-instant initial load times even on slow mobile connections.
 - <b>Rapid UI Styling with Tailwind:</b> Used **Tailwind CSS** to author the modern layout, typography scale, and responsive grids. This utility-first approach kept the production CSS bundle exceptionally small and ensured fluid scalability across mobile, tablet, and desktop viewports.
