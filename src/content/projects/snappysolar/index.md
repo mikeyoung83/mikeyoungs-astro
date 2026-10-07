@@ -21,7 +21,7 @@ Snappy Solar is a sleek, high-converting lead generation platform built to captu
 ![Homepage](./img/solar_1.png)
 
 ### The Challenge
-Solar energy qualification requires gathering precise homeowner details, including utility providers, regional location, and roof suitability. Long, complex forms usually trigger high drop-off rates. The challenge was to engineer an intuitive interface that qualifies leads strictly for high-quality utility matchmaking, without making the multi-step questionnaire feel like a daunting chore.
+Solar energy qualification requires gathering precise homeowner details, including utility providers, regional location, and roof suitability. Long, complex forms usually trigger high drop-off rates. The challenge was to design an intuitive interface that qualifies leads for accurate utility matching, without making the multi-step questionnaire feel like a daunting chore.
 
 ![Information](./img/solar_2.png)
 
@@ -37,6 +37,6 @@ To capture high-intent leads, I focused the design on clean aesthetics and an in
 ### Technical Execution
 Because maximizing lead volume relies heavily on fast performance across varying mobile connection speeds, I utilized a rock-solid, lightweight front-end stack.
 
-- <b>PHP-Backed Architecture:</b> Employed PHP for modular server-side page templating. This kept the layout engine extremely dry and maintainable while ensuring the absolute fastest initial page loads with zero hydration lag.
-- <b>Vanilla JS Strict Validation:</b> Engineered custom JavaScript to handle real-time qualification logic and input validation. This ensures that only well-formatted, actionable lead data is submitted, significantly protecting downstream data integrity without adding bloated framework dependencies.
+- <b>PHP-Backed Architecture:</b> Employed PHP for modular server-side page templating. This kept templates DRY and maintainable, with fast initial page loads and no client-side rendering.
+- <b>Vanilla JS Strict Validation:</b> Wrote custom JavaScript for real-time qualification logic and input validation, so only well-formatted lead data gets submitted, without adding a framework.
 - <b>Mobile-First Layouts:</b> Developed semantic HTML and custom CSS to optimize touch targets and form responsive flows. The multi-step questionnaire operates flawlessly across all modern mobile browsers and desktop displays alike.
