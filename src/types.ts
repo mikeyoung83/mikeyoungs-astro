@@ -19,6 +19,8 @@ export type Site = {
 export type Links = {
   TEXT: string
   HREF: string
+  /** Open in a new tab (e.g. the résumé PDF) */
+  NEW_TAB?: boolean
 }[]
 
 export type Socials = {

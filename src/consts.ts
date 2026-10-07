@@ -1,5 +1,8 @@
 import type { Site, Page, Links, Socials } from "@types";
 
+// Résumé PDF in public/ — replace the file to update it
+export const RESUME_URL = "/Mike_Young-Resume.pdf";
+
 // Global
 export const SITE: Site = {
   TITLE: "Mike Young",
@@ -56,6 +59,11 @@ export const LINKS: Links = [
   {
     TEXT: "Blog",
     HREF: "/blog",
+  },
+  {
+    TEXT: "Résumé",
+    HREF: RESUME_URL,
+    NEW_TAB: true,
   },
 ];
 

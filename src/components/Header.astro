@@ -36,6 +36,7 @@ const iconButton = [
             LINKS.map((LINK) => (
               <a
                 href={LINK.HREF}
+                target={LINK.NEW_TAB ? "_blank" : undefined}
                 aria-current={isActive(LINK.HREF) ? "page" : undefined}
                 class:list={[
                   "h-8 rounded-full px-3 text-current",

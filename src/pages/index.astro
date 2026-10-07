@@ -3,7 +3,7 @@ import { getCollection } from "astro:content"
 import BaseLayout from "@layouts/BaseLayout.astro"
 import ArrowCard from "@components/ArrowCard.astro"
 import StackCard from "@components/StackCard.astro"
-import { SITE, SOCIALS } from "@consts"
+import { SITE, SOCIALS, RESUME_URL } from "@consts"
 import TwinklingStars from "@components/TwinklingStars.astro"
 import MeteorShower from "@components/MeteorShower.astro"
 
@@ -111,6 +111,9 @@ const yearsOfExperience = currentYear - startYear;
             </a>
             <a href='/work' class='py-2 px-4 truncate rounded-sm text-xs md:text-sm lg:text-base border border-base-content/25 hover:bg-base-content/5 dark:hover:bg-base-content/15 blend'>
               View my work history
+            </a>
+            <a href={RESUME_URL} download class='py-2 px-4 truncate rounded-sm text-xs md:text-sm lg:text-base border border-base-content/25 hover:bg-base-content/5 dark:hover:bg-base-content/15 blend'>
+              Download résumé (PDF)
             </a>
           </div>
         </div>
