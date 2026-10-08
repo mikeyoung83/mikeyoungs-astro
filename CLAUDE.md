@@ -45,7 +45,7 @@ The copy is Mike's own and final. Fix typos and grammar only; don't rewrite.
   UI framework.
 - `public/archive/sp/` holds static archived client pages, served untouched
   and excluded from lint and typecheck. Leave them alone.
-- The résumé is `public/Mike_Young-Resume.pdf` (path in `RESUME_URL`, `src/consts.ts`), linked from the nav and the home hero. To update it, replace the file and keep the name. It currently includes Mike's phone number and older wording than the site, by his choice.
+- The résumé is `public/Mike_Young-Resume.pdf` (path in `RESUME_URL`, `src/consts.ts`), linked from the nav and the home hero. To update it, replace the file and keep the name. The résumé (maintained by Mike in Google Docs) is the source of truth for the Work page entries and the home Skills list: when a new PDF arrives, mirror its bullets, titles and skills onto the site word for word. It includes Mike's phone number, by his choice.
 - Atkinson is self-hosted via the Fonts API local provider
   (`src/assets/fonts/`), not Google.
 - `.npmrc` sets `legacy-peer-deps=true` because `eslint-plugin-jsx-a11y`
