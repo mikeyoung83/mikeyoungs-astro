@@ -1,8 +1,8 @@
 [
-  {"id": "front-end", "order": 1, "label": "Front end", "items": ["JavaScript (ES6+)", "TypeScript", "HTML", "CSS / Sass / LESS", "PHP"]},
-  {"id": "frameworks", "order": 2, "label": "Frameworks & CMS", "items": ["Astro", "WordPress (custom themes & plugins)", "Tailwind CSS", "Headless CMS", "jQuery", "Bootstrap"]},
-  {"id": "design", "order": 3, "label": "Design", "items": ["Figma", "Adobe XD", "Photoshop", "Illustrator", "UI/UX", "Wireframing"]},
-  {"id": "performance", "order": 4, "label": "Performance & accessibility", "items": ["Core Web Vitals", "Lighthouse", "WCAG 2.1 / AODA", "Semantic SEO"]},
-  {"id": "ai", "order": 5, "label": "AI tools", "items": ["Claude Code in Zed", "Custom Claude skills & project instructions (CLAUDE.md)", "AI-assisted code review", "AI-assisted prototyping"]},
-  {"id": "workflow", "order": 6, "label": "Workflow", "items": ["Git", "Netlify", "Google Tag Manager", "Asana", "Agile / Scrum"]}
+  {"id": "languages", "order": 1, "label": "Languages & Architecture", "items": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SASS/LESS", "PHP", "Semantic Markup"]},
+  {"id": "frameworks", "order": 2, "label": "Frameworks & CMS", "items": ["AstroJS", "WordPress (Custom Themes & Plugins)", "Oxygen Builder", "Headless CMS", "Tailwind CSS", "jQuery", "Bootstrap"]},
+  {"id": "design", "order": 3, "label": "Design & Prototyping", "items": ["Figma", "Adobe XD", "UI/UX Design", "Wireframing", "Photoshop", "Illustrator"]},
+  {"id": "performance", "order": 4, "label": "Performance & Accessibility", "items": ["Core Web Vitals", "Lighthouse Optimization", "WCAG 2.1 / AODA Compliance", "Semantic SEO"]},
+  {"id": "ai", "order": 5, "label": "AI Integration", "items": ["Claude Code in Zed", "Custom Claude skills & project instructions (CLAUDE.md)", "AI-assisted code review", "AI-assisted prototyping"]},
+  {"id": "workflow", "order": 6, "label": "Tooling & Workflow", "items": ["Git", "Netlify", "Google Tag Manager", "Asana", "Agile/Scrum"]}
 ]

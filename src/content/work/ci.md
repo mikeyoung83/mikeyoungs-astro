@@ -1,14 +1,14 @@
 ---
 company: "CI Financial"
-role: "Front End Developer & Designer"
+role: "Front-End Developer & Designer"
 dateStart: "07/01/2018"
 dateEnd: "03/01/2022"
 ---
 
-Built and maintained high-traffic public and internal web properties across the full development lifecycle, working in Agile/Scrum sprints and retrospectives.
+Built and maintained 10+ public-facing and internal web properties for one of Canada's largest independent wealth and asset managers, serving thousands of monthly visitors; shipped features from design through release as part of an Agile/Scrum team.
 
-Translated complex creative briefs into production-ready digital campaign assets, developing high-performance static and animated programmatic web banners tailored for large-scale financial marketing initiatives.
+Designed and developed dozens of static and animated HTML5 display banners and campaign assets for national programmatic campaigns, turning creative briefs into production-ready builds within ad-network file-size limits.
 
-Produced multi-channel multimedia content—including video and podcast assets—expanding brand reach and modernizing digital audience engagement channels.
+Produced 20+ video and podcast episodes for the firm's digital channels, reaching thousands of viewers and listeners.
 
-Bridged the gap between creative and technical requirements in corporate design review meetings, collaborating with cross-functional stakeholders to ensure technical feasibility and UI precision.
+Represented front-end engineering in corporate design reviews, flagging feasibility issues and refining UI details with designers and marketers before development, which reduced rework late in the build.
