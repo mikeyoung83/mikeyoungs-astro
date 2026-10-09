@@ -77,7 +77,9 @@ const yearsOfExperience = currentYear - startYear;
     <div id="planetcont" class='animate absolute inset-0 top-28 md:top-1/4 overflow-hidden'>
       <div id="crescent" class='absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-screen aspect-square rounded-full p-px bg-linear-to-b from-base-content/25 dark:from-base-content/75 from-0% to-transparent to-5%'>
         <div id="planet" class='w-full h-full bg-base-100 rounded-full p-px overflow-hidden flex justify-center'>
-          <div id="blur" class='w-full h-20 rounded-full bg-base-content/25 blur-3xl'></div>
+          <!-- Glow under the rim. A radial gradient, not a blur filter: iOS Safari clips
+               filtered children of a rounded overflow-hidden box to a straight edge. -->
+          <div id="blur" class='w-full h-40 bg-radial-[ellipse_at_top] from-base-content/15 to-transparent to-70%'></div>
         </div>
       </div>
     </div>
